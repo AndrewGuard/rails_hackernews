@@ -12,7 +12,10 @@ UrlShortener::Application.routes.draw do
     resources :comments, :only => [:create, :update]
   end
 
-  # match 'logout', :to => 'session#logout'
+  resources :sessions, :only => [:new, :create, :destroy]
+
+  match 'login', :to => 'sessions#login'
+  match 'logout', :to => 'sessions#logout'
 
   root :to => 'posts#index'
 end

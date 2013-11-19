@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  # Remember to create a migration!
+  attr_accessible :username, :password, :comments, :email
   has_many :posts
   has_many :comments
   has_many :post_votes

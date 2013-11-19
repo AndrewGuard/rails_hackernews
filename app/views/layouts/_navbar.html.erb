@@ -1,0 +1,13 @@
+<div class="top-navbar" >
+
+<ul class="top-navbar-list">
+  <li><a href='/'>Main</a></li>
+  <li><a href='/posts/new'>New Post</a></li>
+  <%if session[:user_id].nil?%>
+    <li><a href='/users/new'> Login </a></li>
+  <%else%>
+    <li><a href="/users/<%=session[:user_id]%>">Your Profile</a></li>
+    <li><a href='/logout'> Logout </a></li>
+  <%end%>
+</ul>
+</div>

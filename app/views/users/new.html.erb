@@ -1,0 +1,38 @@
+<h3> New User </h3>
+<div>Create an account</div><br>
+<%= form_for(@user) do |create_user| %>
+
+<div class="field">
+  <%= create_user.label :name %><br />
+  <%= create_user.text_field :name %>
+</div>
+<div class="field">
+  <%= create_user.label :email  %><br />
+  <%= create_user.text_field :email %>
+</div>
+<div class="field">
+  <%= create_user.label :password %><br />
+  <%= create_user.password_field :password %>
+</div>
+
+<%= create_user.submit %>
+<% end %>
+<br>
+
+<div>Login to your account</div>
+<br>
+<!-- form_tag preferable to form_for -->
+<%= form_for :session, url: sessions_path do |user| %>
+
+<div class="field">
+  <%= user.label :email  %><br />
+  <%= user.text_field :email %> <br>
+</div>
+
+<div class="field">
+  <%= user.label :password %><br />
+  <%=user.password_field :password  %> <br>
+</div>
+
+  <%= user.submit %>
+<% end %>
