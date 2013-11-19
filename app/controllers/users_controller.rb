@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(user[:email])
+    @user = User.find(session[:user_id])
   end
 
 end
